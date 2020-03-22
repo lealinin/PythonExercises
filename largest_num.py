@@ -9,13 +9,14 @@
 
 
 def largest_number(numbers):
-    max = numbers[0]
+    largest = numbers[0]
     for number in numbers:
-        if number > max:
-            max = number
-    return max
+        if number > largest:
+            largest = number
+    return largest
 
 
-print(largest_number([11, 3, 6, 2]))
+numbers = [12, 3, 6, 2]
+print(largest_number(numbers))
 
 
