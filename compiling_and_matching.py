@@ -4,10 +4,10 @@ import re
 character_1 = "Dorothy"
 character_2 = "Henry"
 
-# compile your regular expression here
+# compile your regular expression
 regular_expression = re.compile("[A-Za-z]{7}")
 
-# check for a match to character_1 here
+# check for a match to character_1
 result_1 = regular_expression.match(character_1)
 
 # store and print the matched text here
