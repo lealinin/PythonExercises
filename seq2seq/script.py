@@ -20,3 +20,6 @@ for line in lines:
   input_docs.append(input_doc)
   # Splitting words from punctuation
   target_doc = " ".join(re.findall(r"[\w']+|[^\s\w]", target_doc))
+  # Redefine target_doc and append it to target_docs
+  target_doc = "<START> " + target_doc + " <END>"
+  target_docs.append(target_doc)
