@@ -36,3 +36,13 @@ for line in lines:
       target_tokens.add(token)
 input_tokens = sorted(list(input_tokens))
 target_tokens = sorted(list(target_tokens))
+
+# Create num_encoder_tokens and num_decoder_tokens:
+num_encoder_tokens = len(input_tokens)
+num_decoder_tokens = len(target_tokens)
+
+try:
+  max_encoder_seq_length = max([len(re.findall(r"[\w']+|[^\s\w]", input_doc)) for input_doc in input_docs])
+  max_decoder_seq_length = max([len(re.findall(r"[\w']+|[^\s\w]", target_doc)) for target_doc in target_docs])
+except ValueError:
+  pass
