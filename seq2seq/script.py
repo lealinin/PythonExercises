@@ -23,3 +23,16 @@ for line in lines:
   # Redefine target_doc and append it to target_docs
   target_doc = "<START> " + target_doc + " <END>"
   target_docs.append(target_doc)
+
+# Now we split up each sentence into words
+# and add each unique word to our vocabulary set
+  for token in re.findall(r"[\w']+|[^\s\w]", input_doc):
+    print(token)
+    if token not in input_tokens:
+      input_tokens.add(token)
+  for token in target_doc.split():
+    print(token)
+    if token not in target_tokens:
+      target_tokens.add(token)
+input_tokens = sorted(list(input_tokens))
+target_tokens = sorted(list(target_tokens))
